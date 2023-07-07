@@ -1,0 +1,1 @@
+export default (e: any) => e.response?.data?.error?.message || 'Something wrong';
