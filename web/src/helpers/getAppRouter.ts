@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { Index, PersonalArea, SignIn, SignUp, NotFound } from '../views';
+import { Index, PostDetail, PersonalArea, SignIn, SignUp, NotFound } from '../views';
 import { useAuthStore } from '../store';
 
 const router = createRouter({
@@ -9,6 +9,11 @@ const router = createRouter({
 					path: '/',
 					name: 'Index',
 					component: Index,
+				},
+				{
+					path: '/post/:id/',
+					name: 'PostDetail',
+					component: PostDetail,
 				},
 				{
 					path: '/me/',

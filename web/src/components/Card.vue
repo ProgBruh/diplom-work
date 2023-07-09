@@ -1,14 +1,18 @@
 <template>
-    <router-link to="/" class="card">
-        <q-card flat bordered>
-            <q-card-section class="q-pt-sm">
+    <router-link :to="`/post/${id}/`" :class="['card', { _solved: solved }]">
+        <q-card 
+            class="content full-height"
+            flat 
+            bordered
+        >
+            <q-card-section class="text q-pt-sm">
                 <span 
                     class="language q-ml-md text-overline text-black" 
                     :style="styleBind"
                     v-html="langName" 
                 />
                 <span class="title q-mb-xs text-h5 text-black" v-html="title" />
-                <span class="content text-caption text-dark" v-html="description" />
+                <span class="description text-caption text-dark" v-html="description" />
             </q-card-section>
             <q-separator />
             <q-card-actions class="row items-center">
@@ -39,9 +43,17 @@ export default {
     name: 'Card',
 
     props: {
+        id: {
+            type: Number,
+            default: 0,
+        },
         title: {
             type: String,
             default: '',
+        },
+        solved: {
+            type: Boolean,
+            default: false,
         },
         description: {
             type: String,
@@ -85,11 +97,27 @@ export default {
     width: 100%;
     text-decoration: none;
 
+    &._solved {
+        
+        .content {
+            border: 2px solid $green;
+        }
+    }
+
     &:hover {
 
         .q-card {
             border-color: $primary;
         }
+    }
+
+    .content {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .text {
+        flex-grow: 1;
     }
 
     .language {
@@ -116,7 +144,7 @@ export default {
         overflow: hidden;
     }
 
-    .content {
+    .description {
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;

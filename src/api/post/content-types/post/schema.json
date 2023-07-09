@@ -37,6 +37,12 @@
     },
     "code": {
       "type": "text"
+    },
+    "answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::answer.answer",
+      "mappedBy": "post"
     }
   }
 }

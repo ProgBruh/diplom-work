@@ -2,6 +2,9 @@
     <q-header>
         <app-container>
             <q-toolbar class="q-px-none">
+                <q-avatar>
+                    <img src="../assets/images/codelp.png" alt="avatar" />
+                </q-avatar>
                 <q-toolbar-title shrink >
                     <router-link style="color: white; text-decoration: none;" to="/">Codelp</router-link>
                 </q-toolbar-title>

@@ -1,5 +1,10 @@
 <template>
     <div class="sign-in-form">
+        <div class="wrapper row q-mb-md justify-center">
+            <q-avatar class="avatar">
+                <img src="../assets/images/codelp.png" alt="avatar" />
+            </q-avatar>
+        </div>
         <div class="form-wrapper q-pa-lg q-mb-sm">
             <q-form
                 ref="form"
@@ -32,7 +37,7 @@
                         <q-icon name="password" />
                     </template>
                 </q-input>
-                <div class="row">
+                <div class="row justify-between">
                     <q-btn 
                         label="Reset" 
                         type="reset" 
@@ -87,6 +92,10 @@ export default {
 <style lang="scss" scoped>
 .sign-in-form {
 
+    .avatar {
+        border: 1px solid #c2c2c2;
+    }
+
     .form-wrapper {
         border-radius: 8px;
         border: 1px solid #c2c2c2;
@@ -94,10 +103,6 @@ export default {
 
     .form {
         width: 350px;
-    }
-
-    .row {
-        justify-content: space-between;
     }
 
     .button {
