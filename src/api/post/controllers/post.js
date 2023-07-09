@@ -31,10 +31,14 @@ module.exports = createCoreController('api::post.post', ({ strapi }) => ({
                     language,
                 } : {}),
                 ...(startDate ? {
-
+                    createdAt: {
+                        $gt: new Date(startDate).toISOString(),
+                    },
                 } : {}),
                 ...(endDate ? {
-
+                    createdAt: {
+                        $lt: new Date(endDate).toISOString(),
+                    },
                 } : {}),
             },
             populate: {
